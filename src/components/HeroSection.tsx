@@ -10,10 +10,12 @@ import slide3 from "@/assets/carousal_ponvandu.png";
 import slide4 from "@/assets/carousal_bingo.png";
 import slide5 from "@/assets/carousal_bovonto.png";
 import slide6 from "@/assets/carousal_meriba.png";
+import slide7 from "@/assets/sure-water.webp";
+import slide8 from "@/assets/power-soap1.png";
 
 const PHONE = "8973373770";
 const WHATSAPP_NUMBER = "918973373770";
-const SLIDES = [slide1, slide2, slide3, slide4, slide5, slide6];
+const SLIDES = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
 const HeroSection = () => {
   const { t } = useLanguage();
