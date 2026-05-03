@@ -4,15 +4,16 @@ import { Phone, Package, Truck, PhoneCall } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import slide1 from "@/assets/carousal_campa.png";
-import slide2 from "@/assets/carousal_ponvandu.png";
-import slide3 from "@/assets/carousal_bingo.png";
-import slide4 from "@/assets/carousal_bovonto.png";
-import slide5 from "@/assets/carousal_meriba.png";
+import slide1 from "@/assets/hero-campa-purple.jpg";
+import slide2 from "@/assets/carousal_campa.png";
+import slide3 from "@/assets/carousal_ponvandu.png";
+import slide4 from "@/assets/carousal_bingo.png";
+import slide5 from "@/assets/carousal_bovonto.png";
+import slide6 from "@/assets/carousal_meriba.png";
 
 const PHONE = "8973373770";
 const WHATSAPP_NUMBER = "918973373770";
-const SLIDES = [slide1, slide2, slide3, slide4, slide5];
+const SLIDES = [slide1, slide2, slide3, slide4, slide5, slide6];
 
 const HeroSection = () => {
   const { t } = useLanguage();

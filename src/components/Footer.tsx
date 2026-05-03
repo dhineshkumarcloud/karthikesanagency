@@ -49,7 +49,6 @@ const Footer = () => {
               <div>
                 <p className="font-semibold opacity-100">{t.footer.hours}</p>
                 <p>{t.footer.hoursDetail}</p>
-                <p>{t.footer.lunchBreak}</p>
               </div>
             </div>
           </div>

@@ -85,7 +85,6 @@ const ContactSection = () => {
               <div className="text-sm">
                 <p className="font-bold text-base">{t.contact.hours}</p>
                 <p className="text-muted-foreground">{t.contact.hoursDetail}</p>
-                <p className="text-muted-foreground">{t.contact.lunchBreak}</p>
               </div>
             </div>
             <Button

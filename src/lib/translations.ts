@@ -49,7 +49,7 @@ export const translations = {
     brands: {
       title: "Brands We Distribute",
       subtitle: "Partnered with leading FMCG brands to deliver quality products",
-      list: ["Bovonto", "Campa Energy", "RichYaaa", "Tizzo", "MERIBA", "Bingo Yumitos", "Podaran", "Ponvandu", "Ruby", "Mani Mark"],
+      list: ["Bovonto", "Campa Energy", "Campa Sure Water", "RichYaaa", "Tizzo", "MERIBA", "Bingo Yumitos", "Podaran", "Ponvandu", "Power Soaps", "Ruby", "Mani Mark"],
     },
     partnership: {
       title: "Distribution Partnerships",
@@ -63,13 +63,13 @@ export const translations = {
       send: "Send Enquiry", success: "Enquiry sent successfully!",
       whatsapp: "WhatsApp Us",
       address: "129/236 Pandaga Salai Street, TR Pattinam, Karaikal - 609606",
-      hours: "Business Hours", hoursDetail: "9:00 AM \u2013 9:00 PM (Mon\u2013Sun)", lunchBreak: "Lunch Break: 1:30 PM \u2013 3:00 PM",
+      hours: "Business Hours", hoursDetail: "9:00 AM \u2013 9:00 PM (Mon\u2013Sun)",
     },
     footer: {
       rights: "All rights reserved.",
       tagline: "Your trusted FMCG distribution partner in Karaikal & TR Pattinam",
       viewMap: "View on Google Maps",
-      hours: "Business Hours", hoursDetail: "9:00 AM \u2013 9:00 PM (Mon\u2013Sun)", lunchBreak: "Lunch Break: 1:30 PM \u2013 3:00 PM",
+      hours: "Business Hours", hoursDetail: "9:00 AM \u2013 9:00 PM (Mon\u2013Sun)",
     },
     language: "\u0BA4\u0BAE\u0BBF\u0BB4\u0BCD",
   },
@@ -121,7 +121,7 @@ export const translations = {
     brands: {
       title: "\u0BA8\u0BBE\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BBF\u0B95\u0BCD\u0B95\u0BC1\u0BAE\u0BCD \u0BAA\u0BBF\u0BB0\u0BBE\u0BA3\u0BCD\u0B9F\u0BC1\u0B95\u0BB3\u0BCD",
       subtitle: "\u0BA4\u0BB0\u0BAE\u0BBE\u0BA9 \u0BAA\u0BCA\u0BB0\u0BC1\u0B9F\u0BCD\u0B95\u0BB3\u0BC8 \u0BB5\u0BB4\u0B99\u0BCD\u0B95 \u0BAE\u0BC1\u0BA9\u0BCD\u0BA3\u0BA3\u0BBF FMCG \u0BAA\u0BBF\u0BB0\u0BBE\u0BA3\u0BCD\u0B9F\u0BC1\u0B95\u0BB3\u0BC1\u0B9F\u0BA9\u0BCD \u0B95\u0BC2\u0B9F\u0BCD\u0B9F\u0BC1",
-      list: ["போவண்டோ", "கேம்பா எனர்ஜி", "ரிச்யா", "டிஸ்சோ", "மெரிபா", "பிங்கோ யுமிட்டோஸ்", "பொடரன்", "பொன்வண்டு", "ரூபி", "மணி மார்க்"],
+      list: ["போவண்டோ", "கேம்பா எனர்ஜி", "கேம்பா ஷூர் வாட்டர்", "ரிச்யா", "டிஸ்சோ", "மெரிபா", "பிங்கோ யுமிட்டோஸ்", "பொடரன்", "பொன்வண்டு", "பவர் சோப்ஸ்", "ரூபி", "மணி மார்க்"],
     },
     partnership: {
       title: "\u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95 \u0B95\u0BC2\u0B9F\u0BCD\u0B9F\u0BBE\u0BA3\u0BCD\u0BAE\u0BC8",
@@ -135,13 +135,13 @@ export const translations = {
       send: "\u0BB5\u0BBF\u0B9A\u0BBE\u0BB0\u0BA3\u0BC8 \u0B85\u0BA9\u0BC1\u0BAA\u0BCD\u0BAA\u0BC1", success: "\u0BB5\u0BBF\u0B9A\u0BBE\u0BB0\u0BA3\u0BC8 \u0BB5\u0BC6\u0BB1\u0BCD\u0BB1\u0BBF\u0B95\u0BB0\u0BAE\u0BBE\u0B95 \u0B85\u0BA9\u0BC1\u0BAA\u0BCD\u0BAA\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1!",
       whatsapp: "WhatsApp \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD",
       address: "129/236 \u0BAA\u0BA3\u0BCD\u0B9F\u0B95 \u0B9A\u0BBE\u0BB2\u0BC8 \u0BA4\u0BC6\u0BB0\u0BC1, TR \u0BAA\u0B9F\u0BCD\u0B9F\u0BBF\u0BA3\u0BAE\u0BCD, \u0B95\u0BBE\u0BB0\u0BC8\u0B95\u0BCD\u0B95\u0BBE\u0BB2\u0BCD - 609606",
-      hours: "\u0BB5\u0BA3\u0BBF\u0B95 \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD", hoursDetail: "\u0B95\u0BBE\u0BB2\u0BC8 9:00 \u2013 \u0B87\u0BB0\u0BB5\u0BC1 9:00 (\u0BA4\u0BBF\u0B99\u0BCD\u0B95\u0BB3\u0BCD\u2013\u0B9E\u0BBE\u0BAF\u0BBF\u0BB1\u0BC1)", lunchBreak: "\u0BAE\u0BA4\u0BBF\u0BAF \u0B87\u0B9F\u0BC8\u0BB5\u0BC7\u0BB3\u0BC8: 1:30 \u2013 3:00 \u0BAE\u0BA3\u0BBF",
+      hours: "\u0BB5\u0BA3\u0BBF\u0B95 \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD", hoursDetail: "\u0B95\u0BBE\u0BB2\u0BC8 9:00 \u2013 \u0B87\u0BB0\u0BB5\u0BC1 9:00 (\u0BA4\u0BBF\u0B99\u0BCD\u0B95\u0BB3\u0BCD\u2013\u0B9E\u0BBE\u0BAF\u0BBF\u0BB1\u0BC1)",
     },
     footer: {
       rights: "\u0B85\u0BA9\u0BC8\u0BA4\u0BCD\u0BA4\u0BC1 \u0B89\u0BB0\u0BBF\u0BAE\u0BC8\u0B95\u0BB3\u0BC1\u0BAE\u0BCD \u0BAA\u0BBE\u0BA4\u0BC1\u0B95\u0BBE\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BB5\u0BC8.",
       tagline: "\u0B95\u0BBE\u0BB0\u0BC8\u0B95\u0BCD\u0B95\u0BBE\u0BB2\u0BCD & TR \u0BAA\u0B9F\u0BCD\u0B9F\u0BBF\u0BA3\u0BA4\u0BCD\u0BA4\u0BBF\u0BA9\u0BCD \u0BA8\u0BAE\u0BCD\u0BAA\u0B95\u0BAE\u0BBE\u0BA9 FMCG \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95 \u0BAA\u0B99\u0BCD\u0B95\u0BC1\u0BA4\u0BBE\u0BB0\u0BB0\u0BCD",
       viewMap: "Google Maps-\u0BB2\u0BCD \u0B95\u0BBE\u0BA3\u0BCD\u0B95",
-      hours: "\u0BB5\u0BA3\u0BBF\u0B95 \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD", hoursDetail: "\u0B95\u0BBE\u0BB2\u0BC8 9:00 \u2013 \u0B87\u0BB0\u0BB5\u0BC1 9:00 (\u0BA4\u0BBF\u0B99\u0BCD\u0B95\u0BB3\u0BCD\u2013\u0B9E\u0BBE\u0BAF\u0BBF\u0BB1\u0BC1)", lunchBreak: "\u0BAE\u0BA4\u0BBF\u0BAF \u0B87\u0B9F\u0BC8\u0BB5\u0BC7\u0BB3\u0BC8: 1:30 \u2013 3:00 \u0BAE\u0BA3\u0BBF",
+      hours: "\u0BB5\u0BA3\u0BBF\u0B95 \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD", hoursDetail: "\u0B95\u0BBE\u0BB2\u0BC8 9:00 \u2013 \u0B87\u0BB0\u0BB5\u0BC1 9:00 (\u0BA4\u0BBF\u0B99\u0BCD\u0B95\u0BB3\u0BCD\u2013\u0B9E\u0BBE\u0BAF\u0BBF\u0BB1\u0BC1)",
     },
     language: "English",
   },
