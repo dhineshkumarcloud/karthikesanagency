@@ -40,12 +40,12 @@ const HeroSection = () => {
           >
             <div className="flex h-full min-h-[300px] sm:min-h-[380px] lg:min-h-[560px]">
               {SLIDES.map((src, i) => (
-                <div key={i} className="relative flex-[0_0_100%] min-w-0 h-full">
+                <div key={i} className="relative flex-[0_0_100%] min-w-0 h-full flex items-center justify-center p-6">
                   <img
                     src={src}
                     alt="Karthikesan Agencies FMCG distribution"
-                    className={`w-full h-full object-contain lg:object-cover transition-transform duration-[5000ms] ease-out ${
-                      selected === i ? "scale-100 lg:scale-110" : "scale-100"
+                    className={`max-w-full max-h-full object-contain transition-transform duration-[5000ms] ease-out ${
+                      selected === i ? "scale-100 lg:scale-105" : "scale-100"
                     }`}
                     loading={i === 0 ? "eager" : "lazy"}
                   />
@@ -73,17 +73,19 @@ const HeroSection = () => {
         <div className="flex flex-col justify-center text-center lg:text-left min-w-0">
           <div className="max-w-5xl mx-auto lg:mx-0 space-y-7 animate-fade-in">
             <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground text-xs font-bold rounded-full uppercase tracking-wider shadow-sm">
-              FMCG Distribution • Karaikal & TR Pattinam
+              FMCG Distribution • Karaikal & TR Pattinam Surroundings
             </span>
 
             <h1
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground leading-[1.05] tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-[1.1] tracking-tight break-words w-full"
               style={{
                 WebkitTextStroke: "1px hsl(var(--foreground))",
                 textShadow: "0 2px 6px hsl(var(--background) / 0.9), 0 0 24px hsl(var(--background) / 0.6)",
+                wordBreak: "break-word",
+                overflowWrap: "break-word",
               }}
             >
-              KARTHIKESAN <span className="text-primary">AGENCIES</span>
+              KARTHIKESAN{" "}<span className="text-primary">AGENCIES</span>
             </h1>
 
             <p

@@ -5,7 +5,7 @@ import path from "path";
 export default defineConfig({
   base: "./",
   server: {
-    host: "::",
+    host: true, // Listens on all addresses (both IPv4 and IPv6) to fix localhost/devtunnel issues
     port: 8080,
     hmr: {
       overlay: false,

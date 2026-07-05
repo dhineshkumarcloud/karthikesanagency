@@ -4,7 +4,7 @@ export const translations = {
   en: {
     nav: { home: "Home", about: "About Us", products: "Products", serviceAreas: "Service Areas", whyUs: "Why Us", brands: "Brands", contact: "Contact" },
     hero: {
-      title: "Trusted FMCG Distributor in Karaikal, TR Pattinam & Surrounding Regions",
+      title: "FMCG Distribution • Karaikal & TR Pattinam Surroundings",
       subtitle: "Supplying Soft Drinks, Water, Snacks & FMCG Products to Retailers and Businesses",
       specialization: "We specialize in bulk supply and distribution partnerships.",
       ctaCall: "Call Now for Bulk Orders",
@@ -41,7 +41,7 @@ export const translations = {
     whyUs: {
       title: "Why Choose Karthikesan Agencies",
       subtitle: "We are committed to being the most reliable distribution partner in the region",
-      trusted: "Trusted FMCG Distributor", trustedDesc: "Years of proven experience in the distribution industry with a strong track record",
+      trusted: "FMCG Distribution • Karaikal & TR Pattinam Surroundings", trustedDesc: "Years of proven experience in the distribution industry with a strong track record",
       delivery: "Fast & Reliable Delivery", deliveryDesc: "Timely supply to retailers across Karaikal & TR Pattinam without delays",
       pricing: "Competitive Pricing", pricingDesc: "Best wholesale rates ensuring healthy margins for our retail partners",
       network: "Strong Retailer Network", networkDesc: "Deep-rooted relationships with retailers and businesses across the region",
@@ -49,7 +49,7 @@ export const translations = {
     brands: {
       title: "Brands We Distribute",
       subtitle: "Partnered with leading FMCG brands to deliver quality products",
-      list: ["Bovonto", "Campa Energy", "Campa Sure Water", "RichYaaa", "Tizzo", "MERIBA", "Bingo Yumitos", "Podaran", "Ponvandu", "Power Soaps", "Ruby", "Mani Mark"],
+      list: ["Bovonto", "Campa Energy", "Campa Sure Water", "RichYaaa", "Tizzo", "MERIBA", "Bingo Yumitos", "Podaran", "Ponvandu", "Power Soaps", "Ruby", "Mani Mark", "தமிழ் Ghee", "Chakra Gold"],
     },
     partnership: {
       title: "Distribution Partnerships",
@@ -67,7 +67,7 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved.",
-      tagline: "Your trusted FMCG distribution partner in Karaikal & TR Pattinam",
+      tagline: "FMCG Distribution • Karaikal & TR Pattinam Surroundings",
       viewMap: "View on Google Maps",
       hours: "Business Hours", hoursDetail: "9:00 AM \u2013 9:00 PM (Mon\u2013Sun)",
     },
@@ -76,7 +76,7 @@ export const translations = {
   ta: {
     nav: { home: "\u0BAE\u0BC1\u0B95\u0BAA\u0BCD\u0BAA\u0BC1", about: "\u0B8E\u0B99\u0BCD\u0B95\u0BB3\u0BC8 \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF", products: "\u0BAA\u0BCA\u0BB0\u0BC1\u0B9F\u0BCD\u0B95\u0BB3\u0BCD", serviceAreas: "\u0B9A\u0BC7\u0BB5\u0BC8 \u0BAA\u0B95\u0BC1\u0BA4\u0BBF\u0B95\u0BB3\u0BCD", whyUs: "\u0B8F\u0BA9\u0BCD \u0BA8\u0BBE\u0B99\u0BCD\u0B95\u0BB3\u0BCD", brands: "\u0BAA\u0BBF\u0BB0\u0BBE\u0BA3\u0BCD\u0B9F\u0BC1\u0B95\u0BB3\u0BCD", contact: "\u0BA4\u0BCA\u0B9F\u0BB0\u0BCD\u0BAA\u0BC1" },
     hero: {
-      title: "\u0B95\u0BBE\u0BB0\u0BC8\u0B95\u0BCD\u0B95\u0BBE\u0BB2\u0BCD, TR \u0BAA\u0B9F\u0BCD\u0B9F\u0BBF\u0BA3\u0BAE\u0BCD & \u0B85\u0BB0\u0BC1\u0B95\u0BBF\u0BB2\u0BC1\u0BB3\u0BCD\u0BB3 \u0BAA\u0B95\u0BC1\u0BA4\u0BBF\u0B95\u0BB3\u0BBF\u0BA9\u0BCD \u0BA8\u0BAE\u0BCD\u0BAA\u0B95\u0BAE\u0BBE\u0BA9 FMCG \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BB8\u0BCD\u0BA4\u0BB0\u0BCD",
+      title: "FMCG Distribution • Karaikal & TR Pattinam Surroundings",
       subtitle: "\u0B9A\u0BBF\u0BB2\u0BCD\u0BB2\u0BB1\u0BC8 \u0BB5\u0BBF\u0BAF\u0BBE\u0BAA\u0BBE\u0BB0\u0BBF\u0B95\u0BB3\u0BCD \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BB5\u0BA3\u0BBF\u0B95\u0B99\u0BCD\u0B95\u0BB3\u0BC1\u0B95\u0BCD\u0B95\u0BC1 \u0B95\u0BC1\u0BB3\u0BBF\u0BB0\u0BCD\u0BAA\u0BBE\u0BA9\u0B99\u0BCD\u0B95\u0BB3\u0BCD, \u0BA4\u0BA3\u0BCD\u0BA3\u0BC0\u0BB0\u0BCD, \u0BA4\u0BBF\u0BA9\u0BCD\u0BAA\u0BA3\u0BCD\u0B9F\u0B99\u0BCD\u0B95\u0BB3\u0BCD & FMCG \u0BAA\u0BCA\u0BB0\u0BC1\u0B9F\u0BCD\u0B95\u0BB3\u0BCD \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BAE\u0BCD",
       specialization: "\u0B9A\u0BBF\u0BB2\u0BCD\u0BB2\u0BB1\u0BC8 \u0B95\u0B9F\u0BC8\u0B95\u0BB3\u0BCD, \u0B9A\u0BC2\u0BAA\u0BCD\u0BAA\u0BB0\u0BCD\u0BAE\u0BBE\u0BB0\u0BCD\u0B95\u0BC6\u0B9F\u0BCD\u0B95\u0BB3\u0BCD \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BB5\u0BA3\u0BBF\u0B95\u0B99\u0BCD\u0B95\u0BB3\u0BC1\u0B95\u0BCD\u0B95\u0BC1 \u0BAE\u0BCA\u0BA4\u0BCD\u0BA4 \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD \u0BA8\u0BBF\u0BAA\u0BC1\u0BA3\u0BA4\u0BCD\u0BA4\u0BC1\u0BB5\u0BAE\u0BCD.",
       ctaCall: "\u0BAE\u0BCA\u0BA4\u0BCD\u0BA4 \u0B86\u0BB0\u0BCD\u0B9F\u0BB0\u0BCD\u0B95\u0BB3\u0BC1\u0B95\u0BCD\u0B95\u0BC1 \u0B87\u0BAA\u0BCD\u0BAA\u0BCB\u0BA4\u0BC7 \u0B85\u0BB4\u0BC8\u0B95\u0BCD\u0B95\u0BB5\u0BC1\u0BAE\u0BCD",
@@ -113,7 +113,7 @@ export const translations = {
     whyUs: {
       title: "\u0B8F\u0BA9\u0BCD \u0B95\u0BBE\u0BB0\u0BCD\u0BA4\u0BCD\u0BA4\u0BBF\u0B95\u0BC7\u0B9A\u0BA9\u0BCD \u0B8F\u0B9C\u0BC6\u0BA9\u0BCD\u0B9A\u0BC0\u0BB8\u0BC8 \u0BA4\u0BC7\u0BB0\u0BCD\u0BB5\u0BC1 \u0B9A\u0BC6\u0BAF\u0BCD\u0BAF \u0BB5\u0BC7\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD",
       subtitle: "\u0BAA\u0BBF\u0BB0\u0BBE\u0BA8\u0BCD\u0BA4\u0BBF\u0BAF\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD \u0BAE\u0BBF\u0B95\u0BB5\u0BC1\u0BAE\u0BCD \u0BA8\u0BAE\u0BCD\u0BAA\u0B95\u0BAE\u0BBE\u0BA9 \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95 \u0BAA\u0B99\u0BCD\u0B95\u0BC1\u0BA4\u0BBE\u0BB0\u0BB0\u0BBE\u0B95 \u0B87\u0BB0\u0BC1\u0B95\u0BCD\u0B95 \u0B89\u0BB1\u0BC1\u0BA4\u0BBF\u0BAA\u0BC2\u0BA3\u0BCD\u0B9F\u0BC1\u0BB3\u0BCD\u0BB3\u0BCB\u0BAE\u0BCD",
-      trusted: "\u0BA8\u0BAE\u0BCD\u0BAA\u0B95\u0BAE\u0BBE\u0BA9 FMCG \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BB8\u0BCD\u0BA4\u0BB0\u0BCD", trustedDesc: "\u0BB5\u0BB2\u0BC1\u0BB5\u0BBE\u0BA9 \u0B9A\u0BBE\u0BA4\u0BA9\u0BC8\u0BAA\u0BCD \u0BAA\u0BA4\u0BBF\u0BB5\u0BC1\u0B9F\u0BA9\u0BCD \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BA4\u0BCD \u0BA4\u0BC1\u0BB1\u0BC8\u0BAF\u0BBF\u0BB2\u0BCD \u0BAA\u0BB2 \u0B86\u0BA3\u0BCD\u0B9F\u0BC1 \u0B85\u0BA9\u0BC1\u0BAA\u0BB5\u0BAE\u0BCD",
+      trusted: "FMCG Distribution • Karaikal & TR Pattinam Surroundings", trustedDesc: "\u0BB5\u0BB2\u0BC1\u0BB5\u0BBE\u0BA9 \u0B9A\u0BBE\u0BA4\u0BA9\u0BC8\u0BAA\u0BCD \u0BAA\u0BA4\u0BBF\u0BB5\u0BC1\u0B9F\u0BA9\u0BCD \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BA4\u0BCD \u0BA4\u0BC1\u0BB1\u0BC8\u0BAF\u0BBF\u0BB2\u0BCD \u0BAA\u0BB2 \u0B86\u0BA3\u0BCD\u0B9F\u0BC1 \u0B85\u0BA9\u0BC1\u0BAA\u0BB5\u0BAE\u0BCD",
       delivery: "\u0BB5\u0BBF\u0BB0\u0BC8\u0BB5\u0BBE\u0BA9 & \u0BA8\u0BAE\u0BCD\u0BAA\u0B95\u0BAE\u0BBE\u0BA9 \u0B9F\u0BC6\u0BB2\u0BBF\u0BB5\u0BB0\u0BBF", deliveryDesc: "\u0B95\u0BBE\u0BB0\u0BC8\u0B95\u0BCD\u0B95\u0BBE\u0BB2\u0BCD & TR \u0BAA\u0B9F\u0BCD\u0B9F\u0BBF\u0BA3\u0BAE\u0BCD \u0BAE\u0BC1\u0BB4\u0BC1\u0BB5\u0BA4\u0BC1\u0BAE\u0BCD \u0BA4\u0BBE\u0BAE\u0BA4\u0BAE\u0BBF\u0BA9\u0BCD\u0BB1\u0BBF \u0B9A\u0BB0\u0BBF\u0BAF\u0BBE\u0BA9 \u0BA8\u0BC7\u0BB0\u0BA4\u0BCD\u0BA4\u0BBF\u0BB2\u0BCD \u0B9F\u0BC6\u0BB2\u0BBF\u0BB5\u0BB0\u0BBF",
       pricing: "\u0BAA\u0BCB\u0B9F\u0BCD\u0B9F\u0BBF \u0BB5\u0BBF\u0BB2\u0BC8", pricingDesc: "\u0B8E\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0B9A\u0BBF\u0BB2\u0BCD\u0BB2\u0BB1\u0BC8 \u0BAA\u0B99\u0BCD\u0B95\u0BC1\u0BA4\u0BBE\u0BB0\u0BB0\u0BCD\u0B95\u0BB3\u0BC1\u0B95\u0BCD\u0B95\u0BC1 \u0B9A\u0BBF\u0BB1\u0BA8\u0BCD\u0BA4 \u0BAE\u0BCA\u0BA4\u0BCD\u0BA4 \u0BB5\u0BBF\u0BB2\u0BC8\u0B95\u0BB3\u0BCD",
       network: "\u0BB5\u0BB2\u0BC1\u0BB5\u0BBE\u0BA9 \u0B9A\u0BBF\u0BB2\u0BCD\u0BB2\u0BB1\u0BC8 \u0BA8\u0BC6\u0B9F\u0BCD\u0BB5\u0BCA\u0BB0\u0BCD\u0B95\u0BCD", networkDesc: "\u0BAA\u0BBF\u0BB0\u0BBE\u0BA8\u0BCD\u0BA4\u0BBF\u0BAF\u0BAE\u0BCD \u0BAE\u0BC1\u0BB4\u0BC1\u0BB5\u0BA4\u0BC1\u0BAE\u0BCD \u0B9A\u0BBF\u0BB2\u0BCD\u0BB2\u0BB1\u0BC8 \u0BB5\u0BBF\u0BAF\u0BBE\u0BAA\u0BBE\u0BB0\u0BBF\u0B95\u0BB3\u0BCD \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BB5\u0BA3\u0BBF\u0B95\u0B99\u0BCD\u0B95\u0BB3\u0BC1\u0B9F\u0BA9\u0BCD \u0B86\u0BB4\u0BAE\u0BBE\u0BA9 \u0B89\u0BB1\u0BB5\u0BC1\u0B95\u0BB3\u0BCD",
@@ -121,7 +121,7 @@ export const translations = {
     brands: {
       title: "\u0BA8\u0BBE\u0B99\u0BCD\u0B95\u0BB3\u0BCD \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BBF\u0B95\u0BCD\u0B95\u0BC1\u0BAE\u0BCD \u0BAA\u0BBF\u0BB0\u0BBE\u0BA3\u0BCD\u0B9F\u0BC1\u0B95\u0BB3\u0BCD",
       subtitle: "\u0BA4\u0BB0\u0BAE\u0BBE\u0BA9 \u0BAA\u0BCA\u0BB0\u0BC1\u0B9F\u0BCD\u0B95\u0BB3\u0BC8 \u0BB5\u0BB4\u0B99\u0BCD\u0B95 \u0BAE\u0BC1\u0BA9\u0BCD\u0BA3\u0BA3\u0BBF FMCG \u0BAA\u0BBF\u0BB0\u0BBE\u0BA3\u0BCD\u0B9F\u0BC1\u0B95\u0BB3\u0BC1\u0B9F\u0BA9\u0BCD \u0B95\u0BC2\u0B9F\u0BCD\u0B9F\u0BC1",
-      list: ["போவண்டோ", "கேம்பா எனர்ஜி", "கேம்பா ஷூர் வாட்டர்", "ரிச்யா", "டிஸ்சோ", "மெரிபா", "பிங்கோ யுமிட்டோஸ்", "பொடரன்", "பொன்வண்டு", "பவர் சோப்ஸ்", "ரூபி", "மணி மார்க்"],
+      list: ["போவண்டோ", "கேம்பா எனர்ஜி", "கேம்பா ஷூர் வாட்டர்", "ரிச்யா", "டிஸ்சோ", "மெரிபா", "பிங்கோ யுமிட்டோஸ்", "பொடரன்", "பொன்வண்டு", "பவர் சோப்ஸ்", "ரூபி", "மணி மார்க்", "தமிழ் கி", "சக்ரா கோல்ட்"],
     },
     partnership: {
       title: "\u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95 \u0B95\u0BC2\u0B9F\u0BCD\u0B9F\u0BBE\u0BA3\u0BCD\u0BAE\u0BC8",
@@ -139,7 +139,7 @@ export const translations = {
     },
     footer: {
       rights: "\u0B85\u0BA9\u0BC8\u0BA4\u0BCD\u0BA4\u0BC1 \u0B89\u0BB0\u0BBF\u0BAE\u0BC8\u0B95\u0BB3\u0BC1\u0BAE\u0BCD \u0BAA\u0BBE\u0BA4\u0BC1\u0B95\u0BBE\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BB5\u0BC8.",
-      tagline: "\u0B95\u0BBE\u0BB0\u0BC8\u0B95\u0BCD\u0B95\u0BBE\u0BB2\u0BCD & TR \u0BAA\u0B9F\u0BCD\u0B9F\u0BBF\u0BA3\u0BA4\u0BCD\u0BA4\u0BBF\u0BA9\u0BCD \u0BA8\u0BAE\u0BCD\u0BAA\u0B95\u0BAE\u0BBE\u0BA9 FMCG \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95 \u0BAA\u0B99\u0BCD\u0B95\u0BC1\u0BA4\u0BBE\u0BB0\u0BB0\u0BCD",
+      tagline: "FMCG Distribution • Karaikal & TR Pattinam Surroundings",
       viewMap: "Google Maps-\u0BB2\u0BCD \u0B95\u0BBE\u0BA3\u0BCD\u0B95",
       hours: "\u0BB5\u0BA3\u0BBF\u0B95 \u0BA8\u0BC7\u0BB0\u0BAE\u0BCD", hoursDetail: "\u0B95\u0BBE\u0BB2\u0BC8 9:00 \u2013 \u0B87\u0BB0\u0BB5\u0BC1 9:00 (\u0BA4\u0BBF\u0B99\u0BCD\u0B95\u0BB3\u0BCD\u2013\u0B9E\u0BBE\u0BAF\u0BBF\u0BB1\u0BC1)",
     },
