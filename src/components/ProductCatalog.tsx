@@ -9,6 +9,8 @@ import campaFlavourImg from "@/assets/Campa-flavour-gemini-1.jpg";
 import campaEnergyNewImg from "@/assets/campa-energy-2.jpeg";
 import rubyMainImg from "@/assets/Ruby-main-gemini.jpg";
 import rubyJuiceImg from "@/assets/ruby-juice.jpeg";
+import rubyFlavourImg from "@/assets/flavour.jpeg";
+import rubyMilkeeRoseImg from "@/assets/milkee-gemini.jpg";
 
 // Other soft drinks
 import richyaaaImg from "@/assets/product-richyaaa.jpg";
@@ -266,6 +268,8 @@ const FeaturedBeveragesSection = ({ onPreview }: { onPreview: (img: ProductImage
               images={[
                 { name: "Ruby Main", src: rubyMainImg },
                 { name: "Ruby Juice", src: rubyJuiceImg },
+                { name: "Ruby Flavour Range", src: rubyFlavourImg },
+                { name: "Milkee Rose", src: rubyMilkeeRoseImg },
               ]}
               index={0}
               onPreview={onPreview}
@@ -358,18 +362,41 @@ const PeanutAndChakraSection = ({ onPreview }: { onPreview: (img: ProductImage) 
             transition: "opacity 700ms ease-out, transform 700ms ease-out",
           }}
         >
-          <SimpleCard
-            name="Manimark Products"
-            images={[
-              { name: "Manimark Products", src: maniMarkImg },
-              { name: "Manimark Burfi", src: maniMarkBurfiImg },
-              { name: "Manimark Chikki", src: peanutChikkiImg },
-              { name: "Manimark Jar Pack", src: maniMarkJarImg },
-            ]}
-            index={0}
-            onPreview={onPreview}
-            aspectClass="aspect-[4/3]"
-          />
+          <div
+            className="rounded-2xl overflow-hidden border-2 h-full flex flex-col"
+            style={{
+              borderColor: "hsl(35 84% 45%)",
+              boxShadow: "0 0 0 3px hsl(35 84% 92%), 0 8px 32px hsl(35 84% 45% / 0.18)",
+            }}
+          >
+            <div
+              className="px-5 py-3 text-center flex-shrink-0"
+              style={{ background: "linear-gradient(135deg, hsl(35 84% 38%), hsl(43 96% 50%))" }}
+            >
+              <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                <Star className="w-3.5 h-3.5 text-white fill-white" />
+                <span className="text-white font-bold text-xs uppercase tracking-widest">Premium Snacks</span>
+                <Star className="w-3.5 h-3.5 text-white fill-white" />
+              </div>
+              <h4 className="text-white text-lg font-extrabold leading-tight">Manimark Products</h4>
+              <p className="text-white/85 text-xs mt-0.5">Peanuts, Sweets, Burfi &amp; Chikki</p>
+            </div>
+
+            <div className="flex-1 bg-card p-0">
+              <SimpleCard
+                name="Manimark Products"
+                images={[
+                  { name: "Manimark Products", src: maniMarkImg },
+                  { name: "Manimark Burfi", src: maniMarkBurfiImg },
+                  { name: "Manimark Chikki", src: peanutChikkiImg },
+                  { name: "Manimark Jar Pack", src: maniMarkJarImg },
+                ]}
+                index={0}
+                onPreview={onPreview}
+                aspectClass="aspect-[4/3]"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Chakra Gold — highlighted card */}
