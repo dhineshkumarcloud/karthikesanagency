@@ -6,6 +6,8 @@ import case500 from "@/assets/meriba-case-500ml.png";
 import case1l from "@/assets/meriba-case-1l.png";
 import case2l from "@/assets/meriba-case-2l.png";
 import campaSureWater from "@/assets/product-campa-sure-water.png";
+import tamilGheeMain from "@/assets/tamizh-gemini-main.jpg";
+import tamilGheePack from "@/assets/tamil-2-gemini.jpg";
 
 type ProductImage = { name: string; src: string };
 type Preview = ProductImage | null;
@@ -19,6 +21,10 @@ const meribaImages: ProductImage[] = [
 ];
 
 const campaSureImage: ProductImage = { name: "Campa Sure Water", src: campaSureWater };
+const tamilGheeImages: ProductImage[] = [
+  { name: "Tamil Ghee Product Range", src: tamilGheeMain },
+  { name: "Tamil Cow Ghee Packs", src: tamilGheePack },
+];
 
 /* ─── Preview Modal ─── */
 const ProductPreview = ({ preview, onClose }: { preview: Preview; onClose: () => void }) => {
@@ -175,6 +181,51 @@ const CampaSureCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }
   </div>
 );
 
+/* ─── Tamil Ghee Card ─── */
+const TamilGheeCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }) => {
+  const [active, setActive] = useState(0);
+  const current = tamilGheeImages[active];
+
+  useEffect(() => {
+    const id = window.setInterval(() => setActive((v) => (v + 1) % tamilGheeImages.length), 2500);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <div className="group bg-card rounded-2xl border-2 border-border shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full">
+      <button
+        type="button"
+        aria-label={`Preview ${current.name}`}
+        onClick={() => onPreview(current)}
+        className="bg-white overflow-hidden w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex-1"
+        style={{ aspectRatio: "4/3" }}
+      >
+        <img
+          src={current.src}
+          alt={current.name}
+          loading="lazy"
+          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+        />
+      </button>
+      <div className="p-4 text-center border-t bg-card">
+        <p className="text-lg font-bold">Tamil Ghee</p>
+        <p className="text-xs text-muted-foreground mt-1">Pure, aromatic cow ghee for everyday cooking and sweets</p>
+        <div className="flex justify-center gap-1.5 pt-3">
+          {tamilGheeImages.map((img, i) => (
+            <button
+              key={img.name}
+              type="button"
+              aria-label={`Show ${img.name}`}
+              onClick={() => setActive(i)}
+              className={`h-1.5 rounded-full transition-all ${active === i ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 /* ─── Main Section ─── */
 const MeribaSection = () => {
   const [preview, setPreview] = useState<Preview>(null);
@@ -196,10 +247,41 @@ const MeribaSection = () => {
           </p>
         </div>
 
-        {/* Two side-by-side cards */}
+        {/* Product cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <MeribaSlideCard onPreview={setPreview} />
           <CampaSureCard onPreview={setPreview} />
+        </div>
+      </div>
+
+      <ProductPreview preview={preview} onClose={() => setPreview(null)} />
+    </section>
+  );
+};
+
+export const GheeProductsSection = () => {
+  const [preview, setPreview] = useState<Preview>(null);
+
+  return (
+    <section id="ghee-products" className="py-16 bg-background overflow-x-hidden w-full">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-10 max-w-2xl mx-auto">
+          <div className="w-12 h-12 rounded-2xl bg-accent flex items-center justify-center mx-auto mb-3">
+            <Droplets className="w-6 h-6 text-accent-foreground" />
+          </div>
+          <span className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full uppercase tracking-wider mb-3">
+            Ghee Products
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold">Ghee Products</h2>
+          <p className="text-sm text-muted-foreground mt-2">
+            Tamil Ghee supplied in premium packs for retail and bulk orders.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="lg:col-start-2">
+            <TamilGheeCard onPreview={setPreview} />
+          </div>
         </div>
       </div>
 

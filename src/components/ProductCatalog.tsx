@@ -7,6 +7,7 @@ import vibroImg from "@/assets/vibro-gemini.png";
 import kalimarkBadamImg from "@/assets/Kalimark-badam-gemini.jpg";
 import campaFlavourImg from "@/assets/Campa-flavour-gemini-1.jpg";
 import campaEnergyNewImg from "@/assets/campa-energy-2.jpeg";
+import campaEnergyBlastImg from "@/assets/campa-energy-blast.png";
 import rubyMainImg from "@/assets/Ruby-main-gemini.jpg";
 import rubyJuiceImg from "@/assets/ruby-juice.jpeg";
 import rubyFlavourImg from "@/assets/flavour.jpeg";
@@ -224,6 +225,7 @@ const FeaturedBeveragesSection = ({ onPreview }: { onPreview: (img: ProductImage
           images={[
             { name: "Campa Flavour", src: campaFlavourImg },
             { name: "Campa Energy", src: campaEnergyNewImg },
+            { name: "Campa Energy Blast", src: campaEnergyBlastImg },
           ]}
           index={1}
           onPreview={onPreview}
