@@ -1,4 +1,4 @@
-import { GlassWater, Cookie, Nut, SprayCan, Star, X, Flame } from "lucide-react";
+import { GlassWater, Cookie, Nut, SprayCan, Star, X, Flame, Coffee } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // Soft drinks — Bovonto now includes vibro & kalimark-badam
@@ -32,6 +32,11 @@ import maniMarkJarImg from "@/assets/product-manimark-jar.webp";
 
 // Chakra Gold (Tea / Ghee product)
 import teaGeminiImg from "@/assets/tea-gemini.jpg";
+
+// Levista Coffee
+import levista1 from "@/assets/l1.jpeg";
+import levista2 from "@/assets/l2.jpeg";
+import levista3 from "@/assets/l3.jpeg";
 
 // Household
 import ponvanduImg from "@/assets/product-ponvandu.jpg";
@@ -350,12 +355,12 @@ const PeanutAndChakraSection = ({ onPreview }: { onPreview: (img: ProductImage) 
         </div>
         <h3 className="text-2xl md:text-3xl font-bold">Peanut Products, Sweets &amp; More</h3>
         <p className="text-sm md:text-base text-muted-foreground mt-2">
-          Mani Mark peanuts, premium sweets, burfi &amp; chikki — plus Chakra Gold premium products
+          Mani Mark peanuts, premium sweets, burfi &amp; chikki, Chakra Gold premium products — plus Levista Coffee
         </p>
       </div>
 
-      {/* Manimark + Chakra Gold side by side */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {/* Manimark, Chakra Gold & Levista Coffee */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Manimark */}
         <div
           style={{
@@ -405,7 +410,7 @@ const PeanutAndChakraSection = ({ onPreview }: { onPreview: (img: ProductImage) 
         <div
           style={{
             opacity: visible ? 1 : 0,
-            transform: visible ? "translateX(0)" : "translateX(60px)",
+            transform: visible ? "translateY(0)" : "translateY(60px)",
             transition: "opacity 700ms 150ms ease-out, transform 700ms 150ms ease-out",
           }}
         >
@@ -448,6 +453,50 @@ const PeanutAndChakraSection = ({ onPreview }: { onPreview: (img: ProductImage) 
                 <p className="text-base font-bold leading-tight">Chakra Gold</p>
                 <p className="text-xs text-muted-foreground mt-1">Premium Ghee &amp; Tea Products</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Levista Coffee */}
+        <div
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateX(0)" : "translateX(60px)",
+            transition: "opacity 700ms 300ms ease-out, transform 700ms 300ms ease-out",
+          }}
+        >
+          <div
+            className="rounded-2xl overflow-hidden border-2 h-full flex flex-col"
+            style={{
+              borderColor: "hsl(25 50% 35%)",
+              boxShadow: "0 0 0 3px hsl(25 50% 92%), 0 8px 32px hsl(25 50% 35% / 0.18)",
+            }}
+          >
+            <div
+              className="px-5 py-3 text-center flex-shrink-0"
+              style={{ background: "linear-gradient(135deg, hsl(25 50% 25%), hsl(30 52% 40%))" }}
+            >
+              <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                <Coffee className="w-3.5 h-3.5 text-white fill-white" />
+                <span className="text-white font-bold text-xs uppercase tracking-widest">Premium Coffee</span>
+                <Coffee className="w-3.5 h-3.5 text-white fill-white" />
+              </div>
+              <h4 className="text-white text-lg font-extrabold leading-tight">Levista Coffee</h4>
+              <p className="text-white/85 text-xs mt-0.5">Instant &amp; Filter Coffee Range</p>
+            </div>
+
+            <div className="flex-1 bg-card p-0">
+              <SimpleCard
+                name="Levista Coffee"
+                images={[
+                  { name: "Levista Coffee Classic", src: levista1 },
+                  { name: "Levista Coffee Premium", src: levista2 },
+                  { name: "Levista Coffee Strong", src: levista3 },
+                ]}
+                index={2}
+                onPreview={onPreview}
+                aspectClass="aspect-[4/3]"
+              />
             </div>
           </div>
         </div>

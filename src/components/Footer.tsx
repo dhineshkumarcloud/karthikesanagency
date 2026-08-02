@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram } from "lucide-react";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -32,6 +32,17 @@ const Footer = () => {
             <p className="font-extrabold text-xl mb-2">Karthikesan Agencies</p>
             <p className="text-sm opacity-70 leading-relaxed">{t.footer.tagline}</p>
             <p className="text-sm opacity-70 leading-relaxed mt-2">GST NO: 34FQHPK2299M1Z7</p>
+            <div className="mt-3">
+              <a
+                href="https://www.instagram.com/karthikesanagencies?igsh=dGlzdXZwZHdiOTZi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm opacity-75 hover:opacity-100 hover:text-pink-400 transition-all font-semibold text-pink-500"
+              >
+                <Instagram className="w-4 h-4 shrink-0" />
+                <span>Instagram Profile</span>
+              </a>
+            </div>
           </div>
           <div className="flex flex-col items-center sm:items-start gap-3">
             <div className="flex items-start gap-2.5 text-sm opacity-80">

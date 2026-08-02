@@ -13,10 +13,11 @@ import slide6 from "@/assets/carousal_meriba.png";
 import slide7 from "@/assets/sure-water.webp";
 import slide8 from "@/assets/power-soap1.png";
 import allJuiceImg from "@/assets/all-juice.jpeg";
+import slide9 from "@/assets/Gemini_Generated_Image_5sy1yv5sy1yv5sy1.png";
 
 const PHONE = "8973373770";
 const WHATSAPP_NUMBER = "918973373770";
-const SLIDES = [allJuiceImg, slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
+const SLIDES = [allJuiceImg, slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide9, slide8];
 
 const HeroSection = () => {
   const { t } = useLanguage();
