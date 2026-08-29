@@ -17,7 +17,18 @@ import slide9 from "@/assets/Gemini_Generated_Image_5sy1yv5sy1yv5sy1.png";
 
 const PHONE = "8973373770";
 const WHATSAPP_NUMBER = "918973373770";
-const SLIDES = [allJuiceImg, slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide9, slide8];
+const SLIDES = [
+  { src: allJuiceImg, alt: "Karthikesan Agencies FMCG beverages wholesale supply Karaikal and TR Pattinam" },
+  { src: slide1, alt: "Campa Soft Drinks wholesale supply Karaikal" },
+  { src: slide2, alt: "Campa Energy beverage bulk distribution TR Pattinam" },
+  { src: slide3, alt: "Ponvandu detergent powder and dishwash distributor Karaikal" },
+  { src: slide4, alt: "Bingo Yumitos chips and snacks wholesale supplier" },
+  { src: slide5, alt: "Bovonto soft drink bulk supply Karaikal" },
+  { src: slide6, alt: "MERIBA packaged drinking water distributor TR Pattinam" },
+  { src: slide7, alt: "Campa Sure packaged drinking water bulk supply" },
+  { src: slide9, alt: "Karthikesan Agencies FMCG product warehouse distribution center" },
+  { src: slide8, alt: "Power Soaps household cleaning products wholesale Karaikal" },
+];
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -41,11 +52,12 @@ const HeroSection = () => {
             className="overflow-hidden relative w-full min-h-[300px] sm:min-h-[380px] lg:min-h-[560px] flex-1 rounded-2xl border border-border/60 bg-muted/30 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.12)] ring-1 ring-border/40"
           >
             <div className="flex h-full min-h-[300px] sm:min-h-[380px] lg:min-h-[560px]">
-              {SLIDES.map((src, i) => (
+              {SLIDES.map((slide, i) => (
                 <div key={i} className="relative flex-[0_0_100%] min-w-0 h-full flex items-center justify-center p-6">
                   <img
-                    src={src}
-                    alt="Karthikesan Agencies FMCG distribution"
+                    src={slide.src}
+                    alt={slide.alt}
+                    decoding="async"
                     className={`max-w-full max-h-full object-contain transition-transform duration-[5000ms] ease-out ${
                       selected === i ? "scale-100 lg:scale-105" : "scale-100"
                     }`}

@@ -135,7 +135,10 @@ const SimpleCard = ({
         className={`${aspectClass} bg-white overflow-hidden w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
       >
         <img
-          src={current.src} alt={current.name} loading="lazy"
+          src={current.src}
+          alt={`${current.name} - Karthikesan Agencies FMCG Distribution Karaikal`}
+          decoding="async"
+          loading="lazy"
           className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
         />
       </button>
@@ -444,7 +447,9 @@ const PeanutAndChakraSection = ({ onPreview }: { onPreview: (img: ProductImage) 
                 className="aspect-[4/3] bg-white overflow-hidden w-full group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 block"
               >
                 <img
-                  src={teaGeminiImg} alt="Chakra Gold"
+                  src={teaGeminiImg}
+                  alt="Chakra Gold Tea & Ghee Wholesale Karaikal - Karthikesan Agencies"
+                  decoding="async"
                   loading="lazy"
                   className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />

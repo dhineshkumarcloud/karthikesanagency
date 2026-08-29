@@ -114,7 +114,10 @@ const MeribaSlideCard = ({ onPreview }: { onPreview: (img: ProductImage) => void
             className="w-full h-full focus-visible:outline-none"
           >
             <img
-              src={current.src} alt={current.name} loading="lazy"
+              src={current.src}
+              alt={`${current.name} - MERIBA Packaged Water Wholesale Karaikal`}
+              decoding="async"
+              loading="lazy"
               className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
             />
           </button>
@@ -170,7 +173,10 @@ const CampaSureCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }
       style={{ aspectRatio: "4/3" }}
     >
       <img
-        src={campaSureImage.src} alt={campaSureImage.name} loading="lazy"
+        src={campaSureImage.src}
+        alt="Campa Sure Packaged Drinking Water Wholesale Supply TR Pattinam - Karthikesan Agencies"
+        decoding="async"
+        loading="lazy"
         className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
       />
     </button>
@@ -202,7 +208,8 @@ const TamilGheeCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }
       >
         <img
           src={current.src}
-          alt={current.name}
+          alt={`${current.name} - Tamil Pure Cow Ghee Wholesale Karaikal`}
+          decoding="async"
           loading="lazy"
           className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
         />

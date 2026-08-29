@@ -44,7 +44,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex flex-col items-center sm:items-start gap-3">
+          <address className="not-italic flex flex-col items-center sm:items-start gap-3">
             <div className="flex items-start gap-2.5 text-sm opacity-80">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
               <span>129/236 Pandaga Salai Street, TR Pattinam, Karaikal - 609606</span>
@@ -53,7 +53,7 @@ const Footer = () => {
               <Phone className="w-4 h-4 shrink-0" />
               <a href="tel:+919487215608" className="font-semibold hover:opacity-80 transition-opacity">+91 9487215608</a>
             </div>
-          </div>
+          </address>
           <div className="flex flex-col items-center sm:items-start gap-2">
             <div className="flex items-start gap-2.5 text-sm opacity-80">
               <Clock className="w-4 h-4 mt-0.5 shrink-0" />
