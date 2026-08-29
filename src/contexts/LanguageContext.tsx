@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { translations, type Language } from "@/lib/translations";
 
 type TranslationType = (typeof translations)[Language];
@@ -15,6 +15,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Language>("en");
   const toggle = () => setLang((l) => (l === "en" ? "ta" : "en"));
   const t = translations[lang];
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   return (
     <LanguageContext.Provider value={{ lang, t, toggle }}>
