@@ -2,8 +2,10 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
+import path from "node:path";
+
 const readProjectFile = (relativePath: string) =>
-  readFileSync(fileURLToPath(new URL(`../../${relativePath}`, import.meta.url)), "utf8");
+  readFileSync(path.resolve(process.cwd(), relativePath), "utf8");
 
 describe("technical SEO assets", () => {
   const html = readProjectFile("index.html");

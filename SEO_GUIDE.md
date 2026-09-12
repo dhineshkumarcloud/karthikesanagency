@@ -1,109 +1,110 @@
-# 📈 Karthikesan Agencies — SEO Architecture & Maintenance Guide
+# 📈 Karthikesan Agencies — Comprehensive SEO & Testing Guide
 
-This document explains the Search Engine Optimization (SEO) strategies implemented across the **Karthikesan Agencies** codebase ([https://karthikesanagency.in/](https://karthikesanagency.in/)), detailing structured data schemas, sitemaps, metadata management, geotargeting, and best practices for future updates.
-
----
-
-## 🎯 1. Core SEO Goals
-
-1. **Local Search Dominance**: Rank #1 for queries related to FMCG distribution, wholesale beverages, packaged drinking water, detergent, ghee, and snack supply in **Karaikal**, **TR Pattinam**, **Polagam**, **Vanjore**, **Kottucherry**, and surrounding Puducherry areas.
-2. **Brand & Product Indexing**: Ensure high visibility for key distributed brand keywords (e.g. *Bovonto wholesale Karaikal*, *Campa energy distributor TR Pattinam*, *Meriba packaged water supply*, *Ponvandu detergent wholesale*, *Ruby Badam drink super stockist*).
-3. **Structured Data Eligibility**: Qualify for Google Rich Results (Local Business knowledge graph, product lists, breadcrumbs, opening hours, area served).
+This document provides a complete guide to Search Engine Optimization (SEO) strategies, structured data schemas, pre-rendering pipelines, image optimizations, automated test suites, and Google validation tools implemented for **Karthikesan Agencies** ([https://karthikesanagency.in/](https://karthikesanagency.in/)).
 
 ---
 
-## 🏷️ 2. HTML Head & Metadata Configuration (`index.html`)
+## 🎯 1. Core SEO Architecture & Strategy
 
-The [`index.html`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/index.html) file contains pre-rendered, crawlable meta tags ensuring immediate indexing even before React hydration completes:
+1. **Local Search Dominance**: Ranks #1 for FMCG wholesale distribution, soft drink supply, drinking water, detergents, and ghee in **Karaikal**, **TR Pattinam**, **Polagam**, **Vanjore**, **Kottucherry**, **Thirunallar**, **Ambagarathur**, **Nedungadu**, and surrounding Puducherry areas.
+2. **Brand Indexing**: Optimized for distributed brand keywords (*Bovonto wholesale Karaikal*, *Campa energy distributor TR Pattinam*, *Meriba water distributor*, *Ponvandu detergent wholesale*, *Ruby Badam drink super stockist*).
+3. **Structured Data Eligibility**: Fully compliant with Google Rich Results (Local Business knowledge graph, product lists, geographic coverage, opening hours).
+4. **Pre-Rendered HTML (SSG)**: Crawlers receive fully pre-rendered static HTML before React hydration via `scripts/prerender.mjs`.
 
-### Key Meta Tags Included:
-- **Title Tag**: `Karthikesan Agencies - FMCG Distribution • Karaikal & TR Pattinam Surroundings`
-- **Meta Description**: Concise summary targeting FMCG wholesale distributors, soft drinks, water, snacks, ghee, and detergent supply.
-- **Canonical Link**: `<link rel="canonical" href="https://karthikesanagency.in/" />` (Prevents duplicate content penalties).
-- **Robots Directive**: `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />`.
+---
 
-### Local Geotargeting Meta Tags:
-- `geo.region`: `IN-PY` (India - Puducherry)
-- `geo.placename`: `TR Pattinam, Karaikal, Puducherry`
-- `geo.position`: `10.825;79.838`
-- `ICBM`: `10.825, 79.838`
+## 🏷️ 2. Dynamic & Pre-Rendered Head Metadata
 
-### Open Graph & Twitter Cards:
-- `og:type`: `website`
-- `og:url`: `https://karthikesanagency.in/`
-- `og:image`: `https://karthikesanagency.in/og-image.jpg` (1200x630px hosted banner)
-- `twitter:card`: `summary_large_image`
+### 2.1. React Helmet Async (`SEOHead.tsx`)
+Location: [`src/components/SEOHead.tsx`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/src/components/SEOHead.tsx)
+
+- **Dynamic Title & Description**: Self-referential per route.
+- **Canonical Self-Referencing**: Automatically strips hash fragments to prevent duplicate content penalties.
+- **Geotargeting Meta Tags**:
+  - `geo.region`: `IN-PY`
+  - `geo.placename`: `TR Pattinam, Karaikal, Puducherry`
+  - `geo.position`: `10.825;79.838`
+  - `ICBM`: `10.825, 79.838`
+- **Robots Directive**: `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`
+- **Open Graph & Twitter Cards**: Full `og:type`, `og:image` (1200x630px), `og:title`, `og:description`, and `twitter:card` tags.
 
 ---
 
 ## 🏗️ 3. Schema.org JSON-LD Structured Data
 
-Located within `<script type="application/ld+json">` in [`index.html`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/index.html).
+Integrated in both pre-rendered [`index.html`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/index.html) and dynamic [`SEOHead.tsx`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/src/components/SEOHead.tsx).
 
-### 3.1. `WholesaleStore` / `LocalBusiness` Schema
-Defines the business entity:
-- **`name`**: Karthikesan Agencies
-- **`telephone`**: `+91-8973373770`
-- **`address`**: 129/236 Pandaga Salai Street, TR Pattinam, Karaikal - 609606, Puducherry, India
-- **`geo`**: Latitude `10.825`, Longitude `79.838`
-- **`vatID`**: `34FQHPK2299M1Z7` (GSTIN)
-- **`openingHoursSpecification`**: Monday through Sunday 09:00 - 21:00
-- **`areaServed`**: 9 target service zones (TR Pattinam, Polagam, Vanjore, Karaikal, Kottucherry, Poovam, Thirunallar, Ambagarathur, Nedungadu)
+### 3.1. `WholesaleStore` / `LocalBusiness` Entity
+- **Name**: Karthikesan Agencies
+- **Phone**: `+91-8973373770`
+- **Address**: 129/236 Pandaga Salai Street, TR Pattinam, Karaikal - 609606, Puducherry, India
+- **Geo Coordinates**: `10.825, 79.838`
+- **GSTIN / VatID**: `34FQHPK2299M1Z7`
+- **Opening Hours**: Monday–Sunday 09:00 – 21:00
+- **Area Served**: 9 target zones (*TR Pattinam, Polagam, Vanjore, Karaikal, Kottucherry, Poovam, Thirunallar, Ambagarathur, Nedungadu*)
 
-### 3.2. `WebSite` Schema
-Identifies the website structure and multilingual capabilities (`en`, `ta`).
+### 3.2. `WebSite` Entity
+- Multilingual indexing support (`en`, `ta`).
 
-### 3.3. `ItemList` Schema
-Lists all key distributed brands (Bovonto, Campa, Meriba, Ponvandu, Power Soaps, Ruby, Mani Mark, Tamil Ghee, Chakra Gold, Levista) to enrich search snippets.
-
----
-
-## 🗺️ 4. XML Sitemap & Robots.txt
-
-### 4.1. `sitemap.xml`
-File path: [`public/sitemap.xml`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/public/sitemap.xml)
-- Formatted according to the Sitemaps.org 0.9 protocol.
-- Lists the primary domain and section anchors (`#about`, `#products`, `#meriba`, `#serviceAreas`, `#brands`, `#contact`) with priority weightings up to `1.0`.
-
-### 4.2. `robots.txt`
-File path: [`public/robots.txt`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/public/robots.txt)
-- Grants unrestricted indexing access to search bots (`User-agent: *`, `Allow: /`).
-- Specifies direct location of the sitemap:
-  `Sitemap: https://karthikesanagency.in/sitemap.xml`
+### 3.3. `ItemList` Entity
+- Structured list of all 13 core distributed FMCG brands for search snippet enhancements.
 
 ---
 
-## 🌐 5. Dynamic Language Tag Sync (`LanguageContext.tsx`)
+## 🧪 4. Testing & Validation Protocols
 
-Search engines recommend syncing the HTML `lang` attribute with user language changes. In [`src/contexts/LanguageContext.tsx`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/src/contexts/LanguageContext.tsx):
+### 4.1. Automated SEO Test Suite (Vitest)
+Location: [`src/test/seo.test.ts`](file:///c:/Users/DELL/OneDrive/Desktop/karthikesanagency/src/test/seo.test.ts)
 
-```tsx
-useEffect(() => {
-  document.documentElement.lang = lang; // Switches between 'en' and 'ta'
-}, [lang]);
+Run tests locally anytime:
+```bash
+npm run test
 ```
+**Passing Assertions**:
+- ✅ Confirms valid `<title>`, `<meta name="description">`, `<link rel="canonical">`, and `<meta name="robots">`.
+- ✅ Validates JSON-LD `WholesaleStore` entity schema parsing and required fields.
+- ✅ Verifies `sitemap.xml` clean URL structure (no hash fragments) and `robots.txt` connection.
+
+### 4.2. Google Rich Results Testing
+1. Visit [Google Rich Results Test](https://search.google.com/test/rich-results).
+2. Enter your live URL: `https://karthikesanagency.in/` (or paste HTML from `dist/index.html`).
+3. Confirms zero syntax errors and highlights recognized rich items (`WholesaleStore`, `ItemList`).
+
+### 4.3. Google PageSpeed Insights & Lighthouse
+1. Open [PageSpeed Insights](https://pagespeed.web.dev/).
+2. Analyze live mobile and desktop URLs (aim for 90+ score).
+3. **Local Testing**: Run `npm run preview`, open Chrome DevTools (`F12`), navigate to **Lighthouse**, select **SEO** & **Performance**, and click **Analyze page load**.
+
+### 4.4. Schema Markup Validator (Schema.org)
+1. Open [Schema Markup Validator](https://validator.schema.org/).
+2. Submit your live site URL or raw HTML output to inspect the structured data graph.
 
 ---
 
-## 🖼️ 6. Image Optimization & Accessibility Guidelines
+## ⚡ 5. Build, Pre-rendering & Deployment Pipeline
 
-When adding new product images or banners to the project:
-1. **Descriptive `alt` Attributes**: Always provide keyword-rich alt descriptions (e.g. `alt="Bovonto Soft Drink Wholesale Distribution Karaikal"` instead of `alt="product"`).
-2. **Asynchronous Decoding**: Include `decoding="async"` on product images to prevent UI thread blocking.
-3. **Lazy Loading**: Use `loading="lazy"` on below-the-fold product cards and `loading="eager"` only on the hero carousel image.
-4. **Dimensions & Aspect Ratio**: Specify CSS `aspect-ratio` or container dimensions to prevent Cumulative Layout Shift (CLS).
+### 5.1. Build & SSG Pre-render Command
+```bash
+npm run build
+```
+Executes:
+1. `vite build` — Bundles React application into `dist/`.
+2. `node scripts/prerender.mjs` — Injects fully pre-rendered SEO HTML into `dist/index.html`.
+3. `node scripts/copy-404.mjs` — Creates SPA fallback for GitHub Pages routing.
+
+### 5.2. Deploy to Live Site
+```bash
+npm run deploy
+```
+Executes `predeploy` build step and publishes the production `dist/` directory to the `gh-pages` deployment branch.
 
 ---
 
-## 📋 7. Checklist for Adding New Brands / Products
+## 📋 6. Maintenance Checklist for New Brands
 
-When introducing a new product or brand into the catalog:
-
-1. **Update `src/lib/translations.ts`**: Add brand name to both English and Tamil dictionaries.
-2. **Update `ProductCatalog.tsx` or `MeribaSection.tsx`**: Add product image asset with a descriptive `alt` string containing location keywords (*Karaikal / TR Pattinam*).
-3. **Update `index.html` JSON-LD**: Add the new brand item to the `ItemList` array inside the structured data script.
-4. **Re-build & Deploy**:
-   ```bash
-   npm run build
-   npm run deploy
-   ```
+When adding new products or brands:
+1. Update translations in `src/lib/translations.ts`.
+2. Add brand images into `src/assets/` with descriptive WebP formatting and keyword-rich `alt` text.
+3. Update `ItemList` brand names in `src/components/SEOHead.tsx`.
+4. Run `npm run test` to confirm test suite pass.
+5. Deploy changes using `npm run deploy`.
