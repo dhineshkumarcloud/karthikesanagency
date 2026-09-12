@@ -2,7 +2,7 @@ export type Language = "en" | "ta";
 
 export const translations = {
   en: {
-    nav: { home: "Home", about: "About Us", products: "Products", serviceAreas: "Service Areas", whyUs: "Why Us", brands: "Brands", contact: "Contact" },
+    nav: { home: "Home", about: "About Us", products: "Products", serviceAreas: "Service Areas", whyUs: "Why Us", brands: "Brands", faq: "FAQ", contact: "Contact" },
     hero: {
       title: "FMCG Distribution • Karaikal & TR Pattinam Surroundings",
       subtitle: "Supplying Soft Drinks, Water, Snacks & FMCG Products to Retailers and Businesses",
@@ -74,7 +74,7 @@ export const translations = {
     language: "\u0BA4\u0BAE\u0BCF\u0BB4\u0BCD",
   },
   ta: {
-    nav: { home: "\u0BAE\u0BC1\u0B95\u0BAA\u0BCD\u0BAA\u0BC1", about: "\u0B8E\u0B99\u0BCD\u0B95\u0BB3\u0BC8 \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF", products: "\u0BAA\u0BCA\u0BB0\u0BC1\u0B9F\u0BCD\u0B95\u0BB3\u0BCD", serviceAreas: "\u0B9A\u0BC7\u0BB5\u0BC8 \u0BAA\u0B95\u0BC1\u0BA4\u0BBF\u0B95\u0BB3\u0BCD", whyUs: "\u0B8F\u0BA9\u0BCD \u0BA8\u0BBE\u0B99\u0BCD\u0B95\u0BB3\u0BCD", brands: "\u0BAA\u0BBF\u0BB0\u0BBE\u0BA3\u0BCD\u0B9F\u0BC1\u0B95\u0BB3\u0BCD", contact: "\u0BA4\u0BCA\u0B9F\u0BB0\u0BCD\u0BAA\u0BC1" },
+    nav: { home: "\u0BAE\u0BC1\u0B95\u0BAA\u0BCD\u0BAA\u0BC1", about: "\u0B8E\u0B99\u0BCD\u0B95\u0BB3\u0BC8 \u0BAA\u0BB1\u0BCD\u0BB1\u0BBF", products: "\u0BAA\u0BCA\u0BB0\u0BC1\u0B9F\u0BCD\u0B95\u0BB3\u0BCD", serviceAreas: "\u0B9A\u0BC7\u0BB5\u0BC8 \u0BAA\u0B95\u0BC1\u0BA4\u0BBF\u0B95\u0BB3\u0BCD", whyUs: "\u0B8F\u0BA9\u0BCD \u0BA8\u0BBE\u0B99\u0BCD\u0B95\u0BB3\u0BCD", brands: "\u0BAA\u0BBF\u0BB0\u0BBE\u0BA3\u0BCD\u0B9F\u0BC1\u0B95\u0BB3\u0BCD", faq: "\u0B95\u0BC7\u0BB3\u0BCD\u0BB5\u0BBF\u0B95\u0BB3\u0BCD", contact: "\u0BA4\u0BCA\u0B9F\u0BB0\u0BCD\u0BAA\u0BC1" },
     hero: {
       title: "FMCG Distribution • Karaikal & TR Pattinam Surroundings",
       subtitle: "\u0B9A\u0BBF\u0BB2\u0BCD\u0BB2\u0BB1\u0BC8 \u0BB5\u0BBF\u0BAF\u0BBE\u0BAA\u0BBE\u0BB0\u0BBF\u0B95\u0BB3\u0BCD \u0BAE\u0BB1\u0BCD\u0BB1\u0BC1\u0BAE\u0BCD \u0BB5\u0BA3\u0BBF\u0B95\u0B99\u0BCD\u0B95\u0BB3\u0BC1\u0B95\u0BCD\u0B95\u0BC1 \u0B95\u0BC1\u0BB3\u0BBF\u0BB0\u0BCD\u0BAA\u0BBE\u0BA9\u0B99\u0BCD\u0B95\u0BB3\u0BCD, \u0BA4\u0BA3\u0BCD\u0BA3\u0BC0\u0BB0\u0BCD, \u0BA4\u0BBF\u0BA9\u0BCD\u0BAA\u0BA3\u0BCD\u0B9F\u0B99\u0BCD\u0B95\u0BB3\u0BCD & FMCG \u0BAA\u0BCA\u0BB0\u0BC1\u0B9F\u0BCD\u0B95\u0BB3\u0BCD \u0BB5\u0BBF\u0BA8\u0BBF\u0BAF\u0BCB\u0B95\u0BAE\u0BCD",

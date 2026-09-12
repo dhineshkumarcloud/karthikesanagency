@@ -45,6 +45,7 @@ const GheeProductsSection = lazy(() =>
 const ServiceAreasSection = lazy(() => import("@/components/ServiceAreasSection"));
 const WhyUsSection = lazy(() => import("@/components/WhyUsSection"));
 const BrandsSection = lazy(() => import("@/components/BrandsSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() =>
   import("@/components/Footer").then((m) => ({ default: m.Footer }))
@@ -79,6 +80,7 @@ const Index = () => (
         <ServiceAreasSection />
         <WhyUsSection />
         <BrandsSection />
+        <FAQSection />
         <ContactSection />
         <Footer />
       </Suspense>

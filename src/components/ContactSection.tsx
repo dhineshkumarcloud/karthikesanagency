@@ -111,6 +111,21 @@ const ContactSection = () => {
                 {t.contact.whatsapp}
               </a>
             </Button>
+
+            {/* Google Maps Location Embed */}
+            <div className="card-premium overflow-hidden rounded-2xl border h-48 relative shadow-md hover:shadow-xl transition-all duration-300">
+              <iframe
+                title="Karthikesan Agencies Google Maps Location TR Pattinam Karaikal"
+                src="https://maps.google.com/maps?q=10.825,79.838&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
           </div>
         </div>
       </div>
