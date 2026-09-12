@@ -1,19 +1,19 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { Phone, Package, Truck, PhoneCall } from "lucide-react";
+import { Phone, Package, Truck, PhoneCall, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import slide1 from "@/assets/hero-campa-purple.jpg";
-import slide2 from "@/assets/carousal_campa.png";
-import slide3 from "@/assets/carousal_ponvandu.png";
-import slide4 from "@/assets/carousal_bingo.png";
-import slide5 from "@/assets/carousal_bovonto.png";
-import slide6 from "@/assets/carousal_meriba.png";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import slide1 from "@/assets/hero-campa-purple.webp";
+import slide2 from "@/assets/carousal_campa.webp";
+import slide3 from "@/assets/carousal_ponvandu.webp";
+import slide4 from "@/assets/carousal_bingo.webp";
+import slide5 from "@/assets/carousal_bovonto.webp";
+import slide6 from "@/assets/carousal_meriba.webp";
 import slide7 from "@/assets/sure-water.webp";
-import slide8 from "@/assets/power-soap1.png";
-import allJuiceImg from "@/assets/all-juice.jpeg";
-import slide9 from "@/assets/Gemini_Generated_Image_5sy1yv5sy1yv5sy1.png";
+import slide8 from "@/assets/power-soap1.webp";
+import allJuiceImg from "@/assets/all-juice.webp";
+import slide9 from "@/assets/Gemini_Generated_Image_5sy1yv5sy1yv5sy1.webp";
 
 const PHONE = "8973373770";
 const WHATSAPP_NUMBER = "918973373770";
@@ -32,9 +32,10 @@ const SLIDES = [
 
 const HeroSection = () => {
   const { t } = useLanguage();
-  const autoplay = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
-  const [emblaRef, embla] = useEmblaCarousel({ loop: true, duration: 22 }, [autoplay.current]);
+  const reducedMotion = useReducedMotion();
+  const [emblaRef, embla] = useEmblaCarousel({ loop: true, duration: 22 });
   const [selected, setSelected] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     if (!embla) return;
@@ -43,6 +44,14 @@ const HeroSection = () => {
     onSelect();
   }, [embla]);
 
+  useEffect(() => {
+    if (!embla || paused || reducedMotion) return;
+    const interval = window.setInterval(() => {
+      if (!document.hidden) embla.scrollNext();
+    }, 6000);
+    return () => window.clearInterval(interval);
+  }, [embla, paused, reducedMotion]);
+
   return (
     <section id="hero" className="pt-16 bg-background">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 lg:items-stretch pt-0 pb-16 md:pb-20 lg:pb-24">
@@ -50,6 +59,15 @@ const HeroSection = () => {
           <div
             ref={emblaRef}
             className="overflow-hidden relative w-full min-h-[300px] sm:min-h-[380px] lg:min-h-[560px] flex-1 rounded-2xl border border-border/60 bg-muted/30 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.12)] ring-1 ring-border/40"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Featured products"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onFocusCapture={() => setPaused(true)}
+            onBlurCapture={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node)) setPaused(false);
+            }}
           >
             <div className="flex h-full min-h-[300px] sm:min-h-[380px] lg:min-h-[560px]">
               {SLIDES.map((slide, i) => (
@@ -57,23 +75,29 @@ const HeroSection = () => {
                   <img
                     src={slide.src}
                     alt={slide.alt}
+                    width={960}
+                    height={720}
                     decoding="async"
                     className={`max-w-full max-h-full object-contain transition-transform duration-[5000ms] ease-out ${
                       selected === i ? "scale-100 lg:scale-105" : "scale-100"
                     }`}
                     loading={i === 0 ? "eager" : "lazy"}
+                    fetchPriority={i === 0 ? "high" : "auto"}
                   />
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex justify-center items-center gap-2.5 pt-5">
+          <div className="flex justify-center items-center gap-2.5 pt-5" aria-label="Carousel controls">
+            <button type="button" onClick={() => { setPaused(true); embla?.scrollPrev(); }} aria-label="Previous featured product" className="rounded-full p-2 text-muted-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
             {SLIDES.map((_, i) => (
               <button
                 key={i}
                 type="button"
                 aria-label={`Go to slide ${i + 1}`}
-                onClick={() => embla?.scrollTo(i)}
+                onClick={() => { setPaused(true); embla?.scrollTo(i); }}
                 className={`rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   selected === i
                     ? "h-2.5 w-9 bg-primary shadow-sm"
@@ -81,6 +105,12 @@ const HeroSection = () => {
                 }`}
               />
             ))}
+            <button type="button" onClick={() => { setPaused(true); embla?.scrollNext(); }} aria-label="Next featured product" className="rounded-full p-2 text-muted-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+            <button type="button" onClick={() => setPaused((value) => !value)} aria-label={paused ? "Play featured product carousel" : "Pause featured product carousel"} className="rounded-full p-2 text-muted-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+              {paused || reducedMotion ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+            </button>
           </div>
         </div>
 
@@ -125,25 +155,28 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
               <Button
+                asChild
                 size="lg"
                 className="gap-2 text-base rounded-full px-8 shadow-lg hover:scale-105 transition-transform"
-                onClick={() => window.open(`tel:+91${PHONE}`)}
               >
-                <Phone className="w-5 h-5" />
-                Call Now: +91 {PHONE}
+                <a href={`tel:+91${PHONE}`}>
+                  <Phone className="w-5 h-5" />
+                  Call Now: +91 {PHONE}
+                </a>
               </Button>
               <Button
+                asChild
                 size="lg"
                 className="gap-2 text-base rounded-full px-8 font-semibold shadow-lg bg-whatsapp hover:bg-whatsapp/90 text-primary-foreground hover:scale-105 transition-all"
-                onClick={() =>
-                  window.open(
-                    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I want to enquire about FMCG distribution")}`,
-                    "_blank"
-                  )
-                }
               >
-                <Phone className="w-5 h-5" />
-                {t.contact.whatsapp}
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I want to enquire about FMCG distribution")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Phone className="w-5 h-5" />
+                  {t.contact.whatsapp}
+                </a>
               </Button>
             </div>
           </div>

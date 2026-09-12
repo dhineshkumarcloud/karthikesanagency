@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Droplets, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import meribaBottles from "@/assets/product-meriba-bottles.webp";
 import case300 from "@/assets/meriba-case-300ml.png";
 import case500 from "@/assets/meriba-case-500ml.png";
@@ -52,7 +53,7 @@ const ProductPreview = ({ preview, onClose }: { preview: Preview; onClose: () =>
           <X className="w-5 h-5" />
         </button>
         <div className="bg-white h-[70vh] max-h-[720px] min-h-[320px]">
-          <img src={preview.src} alt={preview.name} className="w-full h-full object-contain p-5" />
+          <img src={preview.src} alt={preview.name} width={1200} height={900} className="w-full h-full object-contain p-5" />
         </div>
         <div className="p-5 text-center border-t bg-card">
           <p className="text-lg font-bold">{preview.name}</p>
@@ -64,6 +65,7 @@ const ProductPreview = ({ preview, onClose }: { preview: Preview; onClose: () =>
 
 /* ─── Meriba Slide Card ─── */
 const MeribaSlideCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }) => {
+  const reducedMotion = useReducedMotion();
   const [active, setActive] = useState(0);
   const [animating, setAnimating] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -77,20 +79,22 @@ const MeribaSlideCard = ({ onPreview }: { onPreview: (img: ProductImage) => void
     }, 300);
   };
 
-  const startAuto = () => {
+  const startAuto = useCallback(() => {
+    if (reducedMotion || intervalRef.current) return;
     intervalRef.current = setInterval(() => {
       setActive((v) => (v + 1) % meribaImages.length);
     }, 2500);
-  };
+  }, [reducedMotion]);
 
-  const stopAuto = () => {
+  const stopAuto = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-  };
+    intervalRef.current = null;
+  }, []);
 
   useEffect(() => {
     startAuto();
     return stopAuto;
-  }, []);
+  }, [startAuto, stopAuto]);
 
   const current = meribaImages[active];
 
@@ -99,6 +103,10 @@ const MeribaSlideCard = ({ onPreview }: { onPreview: (img: ProductImage) => void
       className="group bg-card rounded-2xl border-2 border-border shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full"
       onMouseEnter={stopAuto}
       onMouseLeave={startAuto}
+      onFocusCapture={stopAuto}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node)) startAuto();
+      }}
     >
       {/* Image area with slide animation */}
       <div className="relative bg-white overflow-hidden" style={{ aspectRatio: "4/3" }}>
@@ -116,6 +124,8 @@ const MeribaSlideCard = ({ onPreview }: { onPreview: (img: ProductImage) => void
             <img
               src={current.src}
               alt={`${current.name} - MERIBA Packaged Water Wholesale Karaikal`}
+              width={800}
+              height={600}
               decoding="async"
               loading="lazy"
               className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
@@ -175,6 +185,8 @@ const CampaSureCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }
       <img
         src={campaSureImage.src}
         alt="Campa Sure Packaged Drinking Water Wholesale Supply TR Pattinam - Karthikesan Agencies"
+        width={800}
+        height={600}
         decoding="async"
         loading="lazy"
         className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
@@ -189,13 +201,15 @@ const CampaSureCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }
 
 /* ─── Tamil Ghee Card ─── */
 const TamilGheeCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }) => {
+  const reducedMotion = useReducedMotion();
   const [active, setActive] = useState(0);
   const current = tamilGheeImages[active];
 
   useEffect(() => {
+    if (reducedMotion) return;
     const id = window.setInterval(() => setActive((v) => (v + 1) % tamilGheeImages.length), 2500);
     return () => window.clearInterval(id);
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <div className="group bg-card rounded-2xl border-2 border-border shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full">
@@ -209,6 +223,8 @@ const TamilGheeCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }
         <img
           src={current.src}
           alt={`${current.name} - Tamil Pure Cow Ghee Wholesale Karaikal`}
+          width={800}
+          height={600}
           decoding="async"
           loading="lazy"
           className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"

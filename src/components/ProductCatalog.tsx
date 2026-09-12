@@ -1,5 +1,6 @@
 import { GlassWater, Cookie, Nut, SprayCan, Star, X, Flame, Coffee } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 // Soft drinks — Bovonto now includes vibro & kalimark-badam
 import bovontoNewImg from "@/assets/Bovonto.webp";
@@ -72,7 +73,7 @@ const ProductPreview = ({ preview, onClose }: { preview: ProductImage | null; on
           <X className="w-5 h-5" />
         </button>
         <div className="bg-white h-[70vh] max-h-[720px] min-h-[320px]">
-          <img src={preview.src} alt={preview.name} className="w-full h-full object-contain p-5" />
+          <img src={preview.src} alt={preview.name} width={1200} height={900} className="w-full h-full object-contain p-5" />
         </div>
         <div className="p-5 text-center border-t bg-card">
           <p className="text-lg font-bold">{preview.name}</p>
@@ -96,9 +97,11 @@ const SimpleCard = ({
   onPreview: (img: ProductImage) => void;
   aspectClass?: string;
 }) => {
+  const reducedMotion = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const current = images[active];
 
   useEffect(() => {
@@ -110,15 +113,21 @@ const SimpleCard = ({
   }, []);
 
   useEffect(() => {
-    if (images.length < 2) return;
-    const id = window.setInterval(() => setActive((v) => (v + 1) % images.length), 2200);
+    if (images.length < 2 || reducedMotion || paused) return;
+    const id = window.setInterval(() => setActive((v) => (v + 1) % images.length), 5000);
     return () => window.clearInterval(id);
-  }, [images.length]);
+  }, [images.length, paused, reducedMotion]);
 
   return (
     <div
       ref={ref}
       className="group bg-card rounded-2xl border shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node)) setPaused(false);
+      }}
       style={{
         transitionDelay: `${(index % 4) * 120}ms`,
         transform: visible ? "translateX(0) rotateY(0deg)" : "translateX(-80px) rotateY(-25deg)",
@@ -137,6 +146,8 @@ const SimpleCard = ({
         <img
           src={current.src}
           alt={`${current.name} - Karthikesan Agencies FMCG Distribution Karaikal`}
+          width={800}
+          height={600}
           decoding="async"
           loading="lazy"
           className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
@@ -148,7 +159,7 @@ const SimpleCard = ({
           <div className="flex justify-center gap-2 pt-2">
             {images.map((img, i) => (
               <button
-                key={img.name} type="button" aria-label={`Show ${img.name}`} onClick={() => setActive(i)}
+                key={img.name} type="button" aria-label={`Show ${img.name}`} onClick={() => { setPaused(true); setActive(i); }}
                 className={`h-1.5 rounded-full transition-all ${active === i ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"}`}
               />
             ))}
@@ -449,6 +460,8 @@ const PeanutAndChakraSection = ({ onPreview }: { onPreview: (img: ProductImage) 
                 <img
                   src={teaGeminiImg}
                   alt="Chakra Gold Tea & Ghee Wholesale Karaikal - Karthikesan Agencies"
+                  width={800}
+                  height={600}
                   decoding="async"
                   loading="lazy"
                   className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"

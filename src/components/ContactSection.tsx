@@ -34,21 +34,31 @@ const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {/* Enquiry Form */}
           <form onSubmit={handleSubmit} className="space-y-5 card-premium p-8">
+            <p className="text-sm font-semibold text-foreground">Request a wholesale quote</p>
+            <label className="sr-only" htmlFor="contact-name">{t.contact.name}</label>
             <Input
+              id="contact-name"
               placeholder={t.contact.name}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
+              autoComplete="name"
               className="h-12 rounded-xl"
             />
+            <label className="sr-only" htmlFor="contact-phone">{t.contact.phone}</label>
             <Input
+              id="contact-phone"
               placeholder={t.contact.phone}
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
               type="tel"
+              inputMode="tel"
+              autoComplete="tel"
               className="h-12 rounded-xl"
             />
+            <label className="sr-only" htmlFor="contact-message">{t.contact.message}</label>
             <Textarea
+              id="contact-message"
               placeholder={t.contact.message}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -88,17 +98,18 @@ const ContactSection = () => {
               </div>
             </div>
             <Button
+              asChild
               size="lg"
               className="w-full gap-2 rounded-full text-base font-semibold shadow-lg bg-whatsapp hover:bg-whatsapp/90 text-primary-foreground hover:scale-105 transition-all"
-              onClick={() =>
-                window.open(
-                  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I want to enquire about FMCG distribution")}`,
-                  "_blank"
-                )
-              }
             >
-              <Phone className="w-5 h-5" />
-              {t.contact.whatsapp}
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I want to enquire about FMCG distribution")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Phone className="w-5 h-5" />
+                {t.contact.whatsapp}
+              </a>
             </Button>
           </div>
         </div>

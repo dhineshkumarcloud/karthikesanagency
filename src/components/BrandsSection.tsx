@@ -46,12 +46,12 @@ const BrandsSection = () => {
           </div>
           <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-foreground relative z-10">{t.partnership.title}</h3>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed relative z-10 max-w-xl mx-auto">{t.partnership.description}</p>
-          <button
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-10 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:bg-primary/90 hover:shadow-xl hover:scale-105 transition-all duration-300 relative z-10"
+          <a
+            href="#contact"
+            className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg hover:bg-primary/90 hover:shadow-xl hover:scale-105 transition-all duration-300 relative z-10"
           >
             {t.partnership.cta}
-          </button>
+          </a>
         </div>
       </div>
     </section>
