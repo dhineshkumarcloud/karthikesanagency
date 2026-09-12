@@ -4,11 +4,11 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 // Soft drinks — Bovonto now includes vibro & kalimark-badam
 import bovontoNewImg from "@/assets/Bovonto.webp";
-import vibroImg from "@/assets/vibro-gemini.png";
+import vibroImg from "@/assets/vibro-gemini.webp";
 import kalimarkBadamImg from "@/assets/Kalimark-badam-gemini.jpg";
 import campaFlavourImg from "@/assets/Campa-flavour-gemini-1.jpg";
 import campaEnergyNewImg from "@/assets/campa-energy-2.jpeg";
-import campaEnergyBlastImg from "@/assets/campa-energy-blast.png";
+import campaEnergyBlastImg from "@/assets/campa-energy-blast.webp";
 import rubyMainImg from "@/assets/Ruby-main-gemini.jpg";
 import rubyJuiceImg from "@/assets/ruby-juice.jpeg";
 import rubyFlavourImg from "@/assets/flavour.jpeg";
@@ -19,7 +19,7 @@ import richyaaaImg from "@/assets/product-richyaaa.jpg";
 import tizzoImg from "@/assets/product-tizzo.jpg";
 
 // Snacks
-import podaranImg from "@/assets/product-podaran.jpg";
+import podaranImg from "@/assets/product-podaran.webp";
 import bingoImg from "@/assets/product-bingo-yumitos.webp";
 import kurkureImg from "@/assets/product-bingo-kurkure.webp";
 import madAnglesImg from "@/assets/product-bingo-mad-angles.webp";
@@ -43,7 +43,7 @@ import levista3 from "@/assets/l3.jpeg";
 import ponvanduImg from "@/assets/product-ponvandu.jpg";
 import ponvanduDishwashImg from "@/assets/product-ponvandu-dishwash.jpg";
 import ponvanduFabricImg from "@/assets/product-ponvandu-fabric.jpg";
-import powerSoapsImg from "@/assets/product-power-soaps.png";
+import powerSoapsImg from "@/assets/product-power-soaps.webp";
 
 type ProductImage = { name: string; src: string };
 

@@ -114,6 +114,46 @@ const JSON_LD = JSON.stringify([
       "Levista Instant & Filter Coffee",
     ].map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "FMCG Brands Catalog", item: `${SITE_URL}#products` },
+      { "@type": "ListItem", position: 3, name: "MERIBA Water Distribution", item: `${SITE_URL}#meriba` },
+      { "@type": "ListItem", position: 4, name: "Contact & Service Areas", item: `${SITE_URL}#contact` },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What FMCG products and brands are distributed by Karthikesan Agencies?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Karthikesan Agencies is an authorized wholesale distributor in Karaikal and TR Pattinam for Bovonto, Campa Energy & Beverages, MERIBA Packaged Drinking Water, Ruby Badam Drink (Super Stockist), Ponvandu Detergent, Power Soaps, Bingo Snacks, Podaran Snacks, Mani Mark Peanuts & Chikki, Tamil Pure Cow Ghee, Chakra Gold Tea, and Levista Coffee.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which areas in Puducherry and Karaikal do Karthikesan Agencies deliver to?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We provide direct wholesale delivery to over 300+ retail stores in TR Pattinam, Polagam, Vanjore, Karaikal town, Kottucherry, Poovam, Thirunallar, Ambagarathur, and Nedungadu.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How can retail store owners place a bulk wholesale order?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Retailers can contact Karthikesan Agencies directly by calling +91-8973373770 or +91-9487215608, or visiting our distribution facility at 129/236 Pandaga Salai Street, TR Pattinam, Karaikal 609606.",
+        },
+      },
+    ],
+  },
 ]);
 
 const SEOHead = ({
@@ -160,6 +200,7 @@ const SEOHead = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={OG_IMAGE} />
 
+      <script type="application/ld+json">{JSON_LD}</script>
     </Helmet>
   );
 };
