@@ -174,30 +174,41 @@ const MeribaSlideCard = ({ onPreview }: { onPreview: (img: ProductImage) => void
 };
 
 /* ─── Campa Sure Card ─── */
-const CampaSureCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }) => (
-  <div className="group bg-card rounded-2xl border-2 border-border shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full">
-    <button
-      type="button" aria-label="Preview Campa Sure Water"
-      onClick={() => onPreview(campaSureImage)}
-      className="bg-white overflow-hidden w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex-1"
-      style={{ aspectRatio: "4/3" }}
-    >
-      <img
-        src={campaSureImage.src}
-        alt="Campa Sure Packaged Drinking Water Wholesale Supply TR Pattinam - Karthikesan Agencies"
-        width={800}
-        height={600}
-        decoding="async"
-        loading="lazy"
-        className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
-      />
-    </button>
-    <div className="p-4 text-center border-t bg-card">
-      <p className="text-lg font-bold">Campa Sure Water</p>
-      <p className="text-xs text-muted-foreground mt-1">Packaged Drinking Water</p>
+const CampaSureCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }) => {
+  const [imgError, setImgError] = useState(false);
+  return (
+    <div className="group bg-card rounded-2xl border-2 border-border shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full hover:-translate-y-1">
+      <button
+        type="button" aria-label="Preview Campa Sure Water"
+        onClick={() => onPreview(campaSureImage)}
+        className="bg-gradient-to-b from-white to-accent/20 overflow-hidden w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex-1 relative"
+        style={{ aspectRatio: "4/3" }}
+      >
+        {imgError ? (
+          <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-accent/40">
+            <Droplets className="w-10 h-10 text-primary mb-2 opacity-80" />
+            <span className="text-xs font-bold text-foreground">Campa Sure Water</span>
+          </div>
+        ) : (
+          <img
+            src={campaSureImage.src}
+            alt="Campa Sure Packaged Drinking Water Wholesale Supply TR Pattinam - Karthikesan Agencies"
+            width={800}
+            height={600}
+            decoding="async"
+            loading="lazy"
+            onError={() => setImgError(true)}
+            className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
+          />
+        )}
+      </button>
+      <div className="p-4 text-center border-t bg-card">
+        <p className="text-lg font-bold">Campa Sure Water</p>
+        <p className="text-xs text-muted-foreground mt-1">Packaged Drinking Water</p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 /* ─── Tamil Ghee Card ─── */
 const TamilGheeCard = ({ onPreview }: { onPreview: (img: ProductImage) => void }) => {

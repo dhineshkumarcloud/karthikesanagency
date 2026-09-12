@@ -118,10 +118,16 @@ const SimpleCard = ({
     return () => window.clearInterval(id);
   }, [images.length, paused, reducedMotion]);
 
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [active, current.src]);
+
   return (
     <div
       ref={ref}
-      className="group bg-card rounded-2xl border shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
+      className="group bg-card rounded-2xl border shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col hover:-translate-y-1"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -129,29 +135,36 @@ const SimpleCard = ({
         if (!event.currentTarget.contains(event.relatedTarget as Node)) setPaused(false);
       }}
       style={{
-        transitionDelay: `${(index % 4) * 120}ms`,
-        transform: visible ? "translateX(0) rotateY(0deg)" : "translateX(-80px) rotateY(-25deg)",
+        transitionDelay: `${(index % 4) * 100}ms`,
+        transform: visible ? "translateY(0)" : "translateY(30px)",
         opacity: visible ? 1 : 0,
-        transition: "transform 900ms cubic-bezier(0.22, 1, 0.36, 1), opacity 700ms ease-out, box-shadow 300ms",
-        transformStyle: "preserve-3d",
-        perspective: "1200px",
+        transition: "transform 700ms cubic-bezier(0.22, 1, 0.36, 1), opacity 600ms ease-out",
       }}
     >
       <button
         type="button"
         aria-label={`Preview ${current.name}`}
         onClick={() => onPreview(current)}
-        className={`${aspectClass} bg-white overflow-hidden w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
+        className={`${aspectClass} bg-gradient-to-b from-white to-accent/20 overflow-hidden w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 relative`}
       >
-        <img
-          src={current.src}
-          alt={`${current.name} - Karthikesan Agencies FMCG Distribution Karaikal`}
-          width={800}
-          height={600}
-          decoding="async"
-          loading="lazy"
-          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-        />
+        {imgError ? (
+          <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-accent/40">
+            <GlassWater className="w-10 h-10 text-primary mb-2 opacity-80" />
+            <span className="text-xs font-bold text-foreground">{current.name}</span>
+            <span className="text-[10px] text-muted-foreground mt-1">Karthikesan Agencies</span>
+          </div>
+        ) : (
+          <img
+            src={current.src}
+            alt={`${current.name} - Karthikesan Agencies FMCG Distribution Karaikal`}
+            width={800}
+            height={600}
+            decoding="async"
+            loading="lazy"
+            onError={() => setImgError(true)}
+            className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+          />
+        )}
       </button>
       <div className="p-4 text-center border-t bg-card">
         <p className="text-base font-bold leading-tight">{name}</p>
