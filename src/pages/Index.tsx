@@ -1,30 +1,9 @@
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ServiceAreasSection from "@/components/ServiceAreasSection";
-import ProductCatalog from "@/components/ProductCatalog";
-import MeribaSection, { GheeProductsSection } from "@/components/MeribaSection";
-import WhyUsSection from "@/components/WhyUsSection";
-import BrandsSection from "@/components/BrandsSection";
-import ContactSection from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
+import NewExperience from "@/components/NewExperience";
 
 const Index = () => (
   <LanguageProvider>
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ProductCatalog />
-      <MeribaSection />
-      <GheeProductsSection />
-      <ServiceAreasSection />
-      <WhyUsSection />
-      <BrandsSection />
-      <ContactSection />
-      <Footer />
-    </div>
+    <NewExperience />
   </LanguageProvider>
 );
 
