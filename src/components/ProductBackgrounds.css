@@ -1,0 +1,149 @@
+/* Product-led colour treatments, aligned with the full-width catalog bands. */
+.shelf-showcase.home-care-showcase {
+  margin-inline: -6vw;
+  padding: 5vw 6vw;
+}
+.shelf-showcase.bovonto-showcase {
+  margin-inline: -6vw;
+  padding: 5vw 6vw;
+  border-bottom: 0;
+  background: #e7edf2;
+  color: #223746;
+}
+.bovonto-showcase .showcase-heading h3 {
+  color: #223746;
+}
+.bovonto-showcase .section-marker {
+  color: #4d6475;
+}
+.bovonto-showcase .showcase-heading p {
+  color: #4d6475;
+}
+.bovonto-showcase .bento-tile {
+  background: #f8fafc;
+  border-color: #d1dce5;
+  box-shadow: 0 18px 35px #22374614;
+}
+.bovonto-showcase .bento-tile-0 {
+  background: #dbe5ed;
+}
+.bovonto-showcase .bento-tile::after {
+  background: linear-gradient(transparent, #172c3ced);
+}
+.bovonto-showcase .bento-tile:hover,
+.bovonto-showcase .bento-tile.is-active {
+  border-color: #718c9f;
+  box-shadow:
+    0 25px 45px #22374624,
+    0 0 20px #ffffff4d;
+}
+
+.shelf-showcase.nabati-showcase {
+  margin-inline: -6vw;
+  padding: 5vw 6vw;
+  border-bottom: 0;
+  background: #f4f1ea;
+  color: #373d33;
+}
+.nabati-showcase .showcase-heading p {
+  color: #62675b;
+}
+.nabati-showcase .nabati-stage {
+  border-color: #d8d9ce;
+  background: linear-gradient(160deg, #faf9f5, #e7e9df);
+  box-shadow: inset 0 1px #ffffffcc;
+}
+.nabati-showcase .nabati-orbit {
+  border-color: #87917a42;
+  box-shadow:
+    0 0 65px #87917a18,
+    inset 0 0 65px #87917a12;
+}
+.nabati-showcase .nabati-card {
+  border-color: #ffffff;
+  background: #fffefa;
+  box-shadow: 0 20px 35px #3f49381a;
+}
+.nabati-showcase .nabati-card-caption {
+  background: #fffefa;
+}
+.nabati-showcase .nabati-card.is-active {
+  box-shadow:
+    0 28px 48px #3f493826,
+    0 0 24px #ffffff66;
+}
+
+.ruby-showcase {
+  margin-inline: -6vw;
+  padding: 5vw 6vw;
+  background:
+    radial-gradient(ellipse at 85% 45%, #41918433, transparent 55%),
+    linear-gradient(120deg, #102b35, #204d4b 65%, #14363d);
+  color: #fff7f0;
+}
+.ruby-showcase > div:first-child {
+  border-left-color: #f5d190;
+}
+.ruby-showcase .section-marker {
+  color: #c9e2d9;
+}
+.ruby-showcase strong {
+  color: #f5d190;
+}
+.ruby-showcase p {
+  color: #d2e5df;
+}
+.ruby-showcase .solid-link {
+  margin-top: 10px;
+  padding: 13px 17px;
+  background: #f5d190;
+  color: #14363d;
+  border: 1px solid #f5d190;
+}
+.ruby-showcase .solid-link:hover {
+  background: #ffe5b4;
+}
+.ruby-showcase .depth-glow {
+  background: #f5d19024;
+}
+.ruby-showcase .depth-card {
+  background: #fff0e4;
+  border-color: #e2efe766;
+  box-shadow: 0 20px 40px #071d2466;
+}
+.ruby-showcase .depth-card.is-center {
+  box-shadow:
+    0 30px 60px #071d2488,
+    0 0 28px #f5d19019;
+}
+.ruby-showcase .depth-card::after {
+  background: linear-gradient(transparent, #102b35f0);
+}
+.ruby-showcase .depth-card small {
+  color: #d2e5df;
+}
+.ruby-showcase .depth-arrow {
+  background: #102b35c9;
+  border-color: #f5d19066;
+}
+.ruby-showcase .depth-arrow:hover {
+  background: #f5d190;
+  color: #102b35;
+}
+.ruby-showcase .depth-dots button.active {
+  background: #f5d190;
+  border-color: #f5d190;
+}
+
+@media (max-width: 800px) {
+  .shelf-showcase.bovonto-showcase,
+  .shelf-showcase.nabati-showcase,
+  .shelf-showcase.home-care-showcase,
+  .ruby-showcase {
+    padding-block: 12vw;
+  }
+  .bovonto-showcase .showcase-heading h3 {
+    font-size: clamp(25px, 7.2vw, 46px);
+    white-space: normal;
+  }
+}

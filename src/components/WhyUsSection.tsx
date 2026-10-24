@@ -1,3 +1,0 @@
-import { useLanguage } from "@/contexts/LanguageContext"; import { ShieldCheck, Truck, IndianRupee, Users } from "lucide-react";
-const keys=["trusted","delivery","pricing","network"] as const; const icons=[ShieldCheck,Truck,IndianRupee,Users];
-export default function WhyUsSection(){const{t}=useLanguage();return <section id="whyUs" className="why-new"><div className="why-intro"><span className="section-label">05 / WHY KARTHIKESAN</span><h2>The work behind<br/>a <i>reliable shelf.</i></h2><p>{t.whyUs.subtitle}</p></div><div className="why-list">{keys.map((k,i)=>{const I=icons[i];const d=`${k}Desc` as keyof typeof t.whyUs;return <article key={k}><span>0{i+1}</span><I/><div><h3>{t.whyUs[k]}</h3><p>{t.whyUs[d]}</p></div></article>})}</div></section>}

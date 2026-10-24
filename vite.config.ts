@@ -5,17 +5,14 @@ import path from "path";
 export default defineConfig({
   base: "./",
   server: {
-    host: true, // Listens on all addresses (both IPv4 and IPv6) to fix localhost/devtunnel issues
+    host: "127.0.0.1",
     port: 8080,
-    hmr: {
-      overlay: false,
-    },
   },
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "@tanstack/react-query", "@tanstack/query-core"],
+    dedupe: ["react", "react-dom"],
   },
 });
