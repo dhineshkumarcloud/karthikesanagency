@@ -21,7 +21,13 @@ npm run format:check
 npm run preview
 ```
 
-`check` runs TypeScript, ESLint and the production build. `preview` serves the resulting `dist` directory. The build generates `404.html` for static-host routing. The existing GitHub Pages deployment command remains available as `npm run deploy`.
+`check` runs TypeScript, ESLint and the production build. `preview` serves the resulting `dist` directory. The build generates `404.html` for static-host routing.
+
+## Deployment
+
+Push changes to `main` to deploy automatically through `.github/workflows/deploy.yml`. The workflow installs locked dependencies, checks formatting and code, builds the site, and publishes the `dist` artifact with GitHub Pages. It can also be started manually from the repository's Actions tab.
+
+GitHub Pages must use **GitHub Actions** as its publishing source. The existing custom domain is `karthikesanagency.in`; keep its DNS and Pages domain settings. No separate build push to `gh-pages` is needed.
 
 ## Project layout
 
